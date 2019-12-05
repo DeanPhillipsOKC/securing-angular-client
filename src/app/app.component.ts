@@ -10,7 +10,6 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
 
   constructor(private _authService: AuthService) {
-    console.log(this._authService);
     this._authService.loginChanged.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
     })
@@ -24,5 +23,9 @@ export class AppComponent implements OnInit {
 
   login() {
     this._authService.login();
+  }
+
+  logout() {
+    this._authService.logout();
   }
 }
